@@ -64,9 +64,10 @@ const NavigationAuth = () => (
 const NavigationNonAuth = () => (
 <div>
   
-      <Link to={ROUTES.HOME}><button type="button">HOME</button></Link>
+      <h3 align = "center"> Welcome to Online Grocery Store!!! </h3>
+      <h4 align = "center"> Please Login to buy grocery <Link to={ROUTES.SIGN_IN}><button type="button">Log In</button></Link></h4>
     
-      <Link to={ROUTES.SIGN_IN}><button type="button">Sign In</button></Link>
+      
       </div>
     
 );
