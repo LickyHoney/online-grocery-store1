@@ -32,6 +32,8 @@ import { AuthUserContext } from '../Session';
   </div>
 );
 */
+
+
 const Navigation = () => (
   <div>
     <AuthUserContext.Consumer>

@@ -19,7 +19,10 @@ import { AuthUserContext } from './components/Session';
 
 
 
-
+const hStyle = { color: '#0000FF' };
+const divStyle ={
+  bgcolor: '#808080'
+};
   
 const App1 = () => (
 
@@ -58,20 +61,12 @@ const NavigationAuth = () => (
       </div>
             <div className="row">
                 <div className="col-md-12">
-                    <h1 align="center">Online Grocery Store</h1>
+                    <h1 align="center" style={ hStyle }>Online Grocery Store</h1>
                 </div>
                  
             </div>
             <br/><br/>
-            <div className="row">
             
-            
-             
-                <SearchBar />
-
-                
-           
-</div>
             
             <div className="row">
                 <div className="col-md-8">
@@ -92,8 +87,8 @@ const NavigationNonAuth = () => (
 <div className="container">
      
       <div className="row">
-                <div className="col-md-12">
-                    <h1 align="center">Online Grocery Store</h1>
+                <div className="col-md-12" style = {divStyle }>
+                    <h1 align="center" style={ hStyle }>Online Grocery Store</h1>
                 </div>
                 
                 </div>
