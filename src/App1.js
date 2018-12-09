@@ -15,6 +15,7 @@ import SearchBar from './SearchBar';
 
 import * as ROUTES from './constants/routes';
 import { withAuthentication } from './components/Session';
+import { AuthUserContext } from './components/Session';
 
 
 
@@ -23,7 +24,16 @@ import { withAuthentication } from './components/Session';
 const App1 = () => (
 
   
-   
+   <div>
+    <AuthUserContext.Consumer>
+      {authUser =>
+        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+      }
+    </AuthUserContext.Consumer>
+  </div>
+  );
+
+const NavigationAuth = () => (
     
      <div className="container">
      <div className="row">
@@ -32,7 +42,7 @@ const App1 = () => (
       <Navigation />
       <hr />
 
-      <Route exact path={ROUTES.LANDING} component={LandingPage} />
+      
       <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
       <Route path={ROUTES.SIGN_IN} component={SignInPage} />
       <Route
@@ -41,7 +51,7 @@ const App1 = () => (
       />
       <Route path={ROUTES.HOME} component={HomePage} />
       <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-      <Route path={ROUTES.ADMIN} component={AdminPage} />
+      
     </div>
       
       </Router>
@@ -76,6 +86,47 @@ const App1 = () => (
         </div>
     
 );
+
+const NavigationNonAuth = () => (
+
+<div className="container">
+     
+      <div className="row">
+                <div className="col-md-12">
+                    <h1 align="center">Online Grocery Store</h1>
+                </div>
+                
+                </div>
+                
+                <div className="row">
+     <Router>
+      <div>
+      <Navigation />
+      <hr />
+
+      
+      <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+      <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+      <Route
+        path={ROUTES.PASSWORD_FORGET}
+        component={PasswordForgetPage}
+      />
+      <Route path={ROUTES.HOME} component={HomePage} />
+      <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+      
+    </div>
+      
+      </Router>
+      </div>
+                 
+            
+            <br/><br/>
+            
+           
+
+      </div>
+      
+      );
 
 
 
